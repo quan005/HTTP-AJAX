@@ -9,14 +9,17 @@ class Form extends React.Component {
                 name: '',
                 age: '',
                 email: '',
+                id: ''
             }
         }
     }
 
     Friend = event => {
         event.preventDefault();
-        this.props.addFriend(this.state.friend);
-        this.setState({friend: {name: '', age: '', email: ''}})
+        this.setState({friend: {age: this.props.id}})
+        console.log(this.state.friend.age)
+        // this.props.addFriend(this.state.friend);
+        // this.setState({friend: {name: '', age: '', email: '', id: ''}})
     }
 
     inputHandler = event => {
@@ -28,7 +31,7 @@ class Form extends React.Component {
     render() {
 
         return(
-            <div className="form-container">
+            <div className={this.props.hide === true ? 'hidden' : 'form-container'}>
                 <form onSubmit={this.Friend}>
                     <div className="wrap-input100 rs1-wrap-input100">
                         <span className="label-input100">Your Name</span>

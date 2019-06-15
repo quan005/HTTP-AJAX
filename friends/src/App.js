@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import FriendsList from './Components/FriendsList';
-import './App.css';
+
+import FriendCard from './Components/FriendCard';
 import Form from './Components/Form';
+import './App.css';
+
 
 export default class App extends Component {
   constructor() {
@@ -10,6 +12,7 @@ export default class App extends Component {
     this.state = {
       friends: [],
       data: false,
+      hide: true,
     };
   }
 
@@ -47,16 +50,27 @@ export default class App extends Component {
       })
   }
 
+  friendUpdated = (updatedData) => {
+    this.setState({friends: updatedData});
+  }
+
+  hide = event => {
+    event.preventDefault();
+    this.setState({hide: false})
+  }
+
   render() {
 
     const friendsData = this.state.friends.map(friend =>(
-      <FriendsList
+      <FriendCard
          age={friend.age}
          email={friend.email}
          name={friend.name}
          id={friend.id}
          key={friend.id}
+         friends={this.state.friends}
          delete={this.deleteFriend}
+         friendUpdated={this.friendUpdated}
       />
     ))
 
@@ -66,28 +80,29 @@ export default class App extends Component {
 
     return(
 
-      <div>
+      <div className="container">
           <h1>My Friends List</h1>
+            
+          <section className="friends-section">
+            {friendsData}
+          </section>
 
-          <div>
-              <label htmlFor="name">Name</label>
-              <label htmlFor="age">Age</label>
-              <label htmlFor="email">Email</label>
+          <section className="add-friend-section">
+            <Form
+              name={this.state.name}
+              age={this.state.age}
+              email={this.state.email}
+              addFriend={this.addFriend}
+              hide={this.state.hide}
+              id={this.state.friends.length + 1}
+            />
+          </section>
+
+          <div className={this.state.hide === false ? 'hidden' : 'add-btn'}>
+            <button className="contact100-form-btn" onClick={this.hide} >
+                Add Friend
+            </button>
           </div>
-
-          <div>
-              <ul>
-                {friendsData}
-              </ul>
-          </div>
-
-          <Form
-            name={this.state.name}
-            age={this.state.age}
-            email={this.state.email}
-            addFriend={this.addFriend}
-            id={this.state.friends.length + 1}
-          />
       </div>
 
     );
