@@ -1,0 +1,377 @@
+html{
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #FAFAFA;
+}
+
+#root {
+  background: #FAFAFA;
+}
+
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { 
+    
+  color: #555555;
+}
+input:-moz-placeholder { 
+    
+  color: #555555;
+}
+input::-moz-placeholder { 
+    
+  color: #555555;
+}
+input:-ms-input-placeholder { 
+    
+  color: #555555;
+}
+
+textarea::-webkit-input-placeholder { 
+    
+  color: #555555;
+}
+textarea:-moz-placeholder { 
+    
+  color: #555555;
+}
+textarea::-moz-placeholder { 
+    
+  color: #555555;
+}
+textarea:-ms-input-placeholder { 
+    
+  color: #555555;
+}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---------------------------------------------*/
+.container {
+	max-width: 1200px;
+}
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input85 {
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 40px;
+}
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 65px;
+}
+
+.rs1-wrap-input85 {
+  width: 85%;
+}
+
+.rs1-wrap-input100 {
+  width: calc((100% - 100px) / 2);
+}
+
+.label-input100 {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #999999;
+  line-height: 1.5;
+  padding-left: 5px;
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: Poppins-SemiBold;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.2;
+  padding: 0 5px;
+}
+
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  background: #ff4b5a;
+}
+
+
+/*---------------------------------------------*/
+input.input100 {
+  height: 40px;
+}
+
+
+textarea.input100 {
+  min-height: 110px;
+  padding-top: 9px;
+  padding-bottom: 13px;
+}
+
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FAFAFA;
+  position: relative;
+}
+
+.friends-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.add-friend-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.form-container form {
+  width: 90%;
+}
+
+.friend-list-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.friend-list-Container h3 {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-form-container{
+  width: 100%;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  background-color: #ff4b5a;
+  border-radius: 15px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -moz-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -o-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+  -ms-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
+}
+
+.contact100-form-btn i {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.contact100-form-btn:hover {
+  background-color: #333333;
+  box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+  -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
+}
+
+.contact100-form-btn:hover i {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+
+.add-btn {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 10px;
+}
+
+.cancel-btn{
+  cursor: pointer;
+
+}
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media (max-width: 992px) {
+  .wrap-contact100 {
+    padding: 82px 80px 33px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rs1-wrap-input100 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap-contact100 {
+    padding: 82px 15px 33px 15px;
+  }
+}
+
+@keyframes beatbtn {
+  0% {
+    background-color: rgba(255, 75, 90, 1);
+    transform-origin: center;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    background-color: rgba(255, 75, 90, 0.8);
+    transform-origin: center;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
